@@ -5,7 +5,9 @@ openPort <- function(proxy, ...){
   path <- whisker.render(bmpAPI[['openPort']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
   VERB(verb = bmpAPI[['openPort']][['method']],
-       url = appURL)
+       url = appURL, body = list(port = as.character(proxy$port)),
+       encode = "form"
+  )
 }
 
 
@@ -15,8 +17,12 @@ getPorts <- function(proxy, ...){
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['getPorts']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
-  VERB(verb = bmpAPI[['getPorts']][['method']],
+  res <- VERB(verb = bmpAPI[['getPorts']][['method']],
        url = appURL)
+  lapply(content(res)$proxyList, function(x){
+    proxy(proxy$baseip, bmpPort = proxy$bmpPort, port = x$port, 
+          openPort = FALSE)
+  })
 }
 
 
