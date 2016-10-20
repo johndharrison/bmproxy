@@ -6,7 +6,7 @@
 #' manipulate network traffic from their AJAX applications.
 #'
 #' @importFrom magrittr %>%
-#' @importFrom httr GET POST PUT DELETE
+#' @importFrom httr VERB content
 #' @importFrom whisker whisker.render
 #'
 #' @docType package
