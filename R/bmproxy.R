@@ -5,6 +5,10 @@
 #' 'BrowserMob Proxy' is a utility to help web developers watch and
 #' manipulate network traffic from their AJAX applications.
 #'
+#' @importFrom magrittr %>%
+#' @importFrom httr GET POST PUT DELETE
+#' @importFrom whisker whisker.render
+#'
 #' @docType package
 #' @name bmproxy
 NULL
