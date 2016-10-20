@@ -1,5 +1,6 @@
 # See https://github.com/lightbody/browsermob-proxy#rest-api
 bmpAPI <- list(
+  openPort = list(method = "POST", path = "/proxy"),
   getPorts = list(method = "GET", path = "/proxy"),
   createHAR = list(method = "PUT", path = "/proxy/{{port}}/har"),
   newPage = list(method = "PUT", path = "/proxy/{{port}}/har/{{pageRef}}"),
