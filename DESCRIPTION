@@ -11,3 +11,8 @@ LazyData: true
 URL: https://github.com/johndharrison/bmproxy
 BugReports: https://github.com/johndharrison/bmproxy/issues
 RoxygenNote: 5.0.1
+Depends:
+    R (>= 3.0.0)
+Imports:
+    request
+    
