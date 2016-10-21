@@ -16,6 +16,12 @@ test_that("canCloseProxy", {
   expect_identical(length(ports), 0L)
 })
 
+test_that("closingClosedProxyGivesError", {
+  prxy <- proxy(bmpPort = 9090L, port = 39500L)
+  expect_silent(prxy %>% closeProxy)
+  expect_error(prxy %>% closeProxy)
+})
+
 test_that("canWaitForTrafficToBeQuiet", {
   prxy <- proxy(bmpPort = 9090L, port = 39500L)
   expect_silent(

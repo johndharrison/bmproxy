@@ -44,6 +44,9 @@ closeProxy <- function(proxy, ...){
   appURL <- file.path(proxy$url, path)
   res <- VERB(verb = bmpAPI[['closeProxy']][['method']],
               url = appURL)
+  stop_for_status(res, paste("close proxy returned response: ", 
+                         res$status)
+  )
   invisible(proxy)
 }
 
@@ -62,7 +65,7 @@ waitForTraffic <- function(proxy, quietPeriod = NULL, timeOut = NULL, ...){
                           timeoutInMs = timeOut),
               encode = "form"
   )
-  stop_for_status(res, c("wait for traffic returned response: ", 
+  stop_for_status(res, paste("wait for traffic returned response:", 
                          res$status)
   )
   invisible(proxy)
@@ -90,7 +93,7 @@ timeouts <- function(proxy, requestTimeout = -1L, readTimeout = 60000L,
                      dnsCacheTimeout = as.character(dnsCacheTimeout)),
          encode = "json"
     )
-  stop_for_status(res, c("timeouts returned response: ", 
+  stop_for_status(res, paste("set timeouts returned response: ", 
                          res$status)
   )
   invisible(proxy)
@@ -109,7 +112,7 @@ setRetry <- function(proxy, retryCount = 1L, ...){
               body = list(retrycount = retryCount),
               encode = "form"
   )
-  stop_for_status(res, c("setRetry returned response: ", 
+  stop_for_status(res, paste("setRetry returned response: ", 
                          res$status)
   )
   invisible(proxy)
@@ -123,7 +126,7 @@ emptyDNS <- function(proxy, ...){
   path <- whisker.render(bmpAPI[['emptyDNS']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
   res <- VERB(verb = bmpAPI[['emptyDNS']][['method']],
-       url = appURL)
+              url = appURL)
   stop_for_status(res, c("emptyDNS returned response: ", 
                          res$status)
   )
