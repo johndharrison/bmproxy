@@ -14,7 +14,7 @@ bmpAPI <- list(
                   group = "session"),
   createHAR = list(method = "PUT", path = "proxy/{{port}}/har", 
                    group = "har"),
-  newPage = list(method = "PUT", path = "proxy/{{port}}/har/{{pageRef}}", 
+  newPage = list(method = "PUT", path = "proxy/{{port}}/har/pageRef", 
                  group = "har"),
   getHAR = list(method = "GET", path = "proxy/{{port}}/har", 
                 group = "har"),
