@@ -6,8 +6,9 @@
 #' manipulate network traffic from their AJAX applications.
 #'
 #' @importFrom magrittr %>%
-#' @importFrom httr VERB content
+#' @importFrom httr VERB content stop_for_status
 #' @importFrom whisker whisker.render
+#' @importFrom assertthat assert_that
 #'
 #' @docType package
 #' @name bmproxy
