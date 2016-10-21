@@ -1,4 +1,4 @@
 
-# {{ version }}
+# 1.0.2
 
-First public release.
+* Add session functions, tests and documentation
