@@ -1,4 +1,6 @@
 library(testthat)
-library({{{ name }}})
+library(bmproxy)
 
-test_check("{{{ name }}}")
+if(Sys.getenv("NOT_CRAN") == "true"){
+  test_check("bmproxy")
+}
