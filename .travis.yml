@@ -9,7 +9,7 @@ env:
   matrix:
   - NOT_CRAN=true
 before_install:
-- docker run -d -p 9090:9090 -p 39500-39999:39500:39999 --name bmp qautomatron/docker-browsermob-proxy
+- docker run -d -p 9090:9090 -p 39500-39999:39500-39999 --name bmp qautomatron/docker-browsermob-proxy
 r:
 - oldrel
 - release
