@@ -1,6 +1,7 @@
 
 #' @rdname openPort
 openPort <- function(proxy, ...){
+  assert_proxy(proxy)
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['openPort']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
@@ -24,6 +25,7 @@ openPort <- function(proxy, ...){
 
 #' @rdname getPorts
 getPorts <- function(proxy, ...){
+  assert_proxy(proxy)
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['getPorts']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
@@ -39,6 +41,7 @@ getPorts <- function(proxy, ...){
 
 #' @rdname closeProxy
 closeProxy <- function(proxy, ...){
+  assert_proxy(proxy)
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['closeProxy']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
@@ -54,6 +57,7 @@ closeProxy <- function(proxy, ...){
 
 #' @rdname waitForTraffic
 waitForTraffic <- function(proxy, quietPeriod = NULL, timeOut = NULL, ...){
+  assert_proxy(proxy)
   assert_that(is.integer(quietPeriod))
   assert_that(is.integer(timeOut))
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
@@ -77,6 +81,7 @@ waitForTraffic <- function(proxy, quietPeriod = NULL, timeOut = NULL, ...){
 timeouts <- function(proxy, requestTimeout = -1L, readTimeout = 60000L,
                      connectionTimeout = 60000L, dnsCacheTimeout = 0L, 
                      ...){
+  assert_proxy(proxy)
   assert_that(is.integer(requestTimeout))
   assert_that(is.integer(readTimeout))
   assert_that(is.integer(connectionTimeout))
@@ -104,6 +109,8 @@ timeouts <- function(proxy, requestTimeout = -1L, readTimeout = 60000L,
 
 #' @rdname setRetry
 setRetry <- function(proxy, retryCount = 1L, ...){
+  assert_proxy(proxy)
+  assert_that(is.integer(retryCount))
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['setRetry']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
@@ -122,6 +129,7 @@ setRetry <- function(proxy, retryCount = 1L, ...){
 
 #' @rdname emptyDNS
 emptyDNS <- function(proxy, ...){
+  assert_proxy(proxy)
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['emptyDNS']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
