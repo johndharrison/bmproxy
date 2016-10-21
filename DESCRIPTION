@@ -1,24 +1,29 @@
 Package: bmproxy
-Title: Wrapper around the 'BrowserMob' Proxy REST API for R
-Version: 1.0.0
+Title: Wrapper around the 'BrowserMob Proxy' REST API for R
+Version: 1.0.1
 Author: johndharrison
 Maintainer: johndharrison <johndharrison0@gmail.com>
-Description: Wrapper around the 'BrowserMob Proxy' REST API for R.
-    'BrowserMob Proxy' is a utility to help web developers watch and 
-    manipulate network traffic from their AJAX applications. It captures 
-    performance data in the HAR format. In addition it can actually 
-    control HTTP traffic, such as: blacklisting and whitelisting certain 
-    URL patterns, simulating various bandwidth and latency, remapping DNS 
-    lookups, flushing DNS caching, controlling DNS and request timeouts
-    and automatic BASIC authorization
+Description: 'BrowserMob Proxy' is a utility to help web developers watch 
+    and manipulate network traffic from their AJAX applications. It 
+    captures performance data in the HAR format. In addition it can 
+    actually control HTTP traffic, such as: blacklisting and whitelisting 
+    certain URL patterns, simulating various bandwidth and latency, 
+    remapping DNS lookups, flushing DNS caching, controlling DNS and 
+    request timeouts and automatic BASIC authorization. This package
+    provides an R client for the 'BrowserMob Proxy' REST API.
 License: GPL-3
 LazyData: true
 URL: https://github.com/johndharrison/bmproxy
 BugReports: https://github.com/johndharrison/bmproxy/issues
 RoxygenNote: 5.0.1
+License: GPL-3
 Depends:
     R (>= 3.0.0)
 Imports:
     httr,
     magrittr,
-    jsonlite
+    jsonlite,
+    whisker,
+    assertthat
+Suggests:
+    testthat
