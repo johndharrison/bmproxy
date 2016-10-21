@@ -7,7 +7,7 @@
 #' @param ref The string name of The first page ref that should be used in 
 #'    the HAR. Optional if NULL defaults to "Page 1".
 #' @param title The title of first HAR page. Optional, default to ref
-#' @paran captureHeaders Boolean, capture headers or not. Optional, 
+#' @param captureHeaders Boolean, capture headers or not. Optional, 
 #'    default to FALSE.
 #' @param captureContent Boolean, capture content bodies or not. Optional,
 #'    default to FALSE.

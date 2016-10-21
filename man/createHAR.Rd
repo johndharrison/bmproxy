@@ -16,6 +16,9 @@ the HAR. Optional if NULL defaults to "Page 1".}
 
 \item{title}{The title of first HAR page. Optional, default to ref}
 
+\item{captureHeaders}{Boolean, capture headers or not. Optional, 
+default to FALSE.}
+
 \item{captureContent}{Boolean, capture content bodies or not. Optional,
 default to FALSE.}
 
