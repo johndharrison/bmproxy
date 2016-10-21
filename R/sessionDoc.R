@@ -40,6 +40,7 @@ NULL
 #' @family session functions
 #' @export
 #'
+#' @template retProxy
 #' @example /inst/examples/docs/session.R
 #' @name closeProxy
 NULL
@@ -57,6 +58,7 @@ NULL
 #' @family session functions
 #' @export
 #'
+#' @template retProxy
 #' @example /inst/examples/docs/session.R
 #' @name waitForTraffic
 NULL
@@ -82,6 +84,7 @@ NULL
 #'    will be stored in this Cache. A nonpositive value disables this 
 #'    feature (that is, sets no limit). Optional, default to "0".
 #' @family session functions
+#' @template retProxy
 #' @export
 #'
 #' @example /inst/examples/docs/session.R
@@ -89,29 +92,32 @@ NULL
 NULL
 
 
-#' setRetry
+#' Set the retry count
 #'
-#'setRetry
+#' Set the retry count
 #'
 #' @template proxy
+#' @param retryCount  The number of times a method will be retried
 #' @template ellipsis
 #' @family session functions
 #' @export
 #'
+#' @template retProxy
 #' @example /inst/examples/docs/session.R
 #' @name setRetry
 NULL
 
 
-#' emptyDNS
+#' Empty the DNS
 #'
-#'emptyDNS
+#' Empties the DNS cache. Clears the DNS cache associated with the proxy instance
 #'
 #' @template proxy
 #' @template ellipsis
 #' @family session functions
 #' @export
 #'
+#' @template retProxy
 #' @example /inst/examples/docs/session.R
 #' @name emptyDNS
 NULL
