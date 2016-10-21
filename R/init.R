@@ -6,7 +6,7 @@
 #' @param openPort call the openPort function to create a new proxy on the
 #'    BMP server.
 #'
-#' @return an object of type proxy see \code{\link{proxy}}
+#' @return an object of type proxy is returned. 
 #' @export
 #'
 #' @examples
