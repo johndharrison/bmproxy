@@ -7,6 +7,7 @@ test_that("canCreateNewDefaultHAR", {
   secondHar <- prxy  %>% createHAR
   expect_identical(secondHar$status, 200L)
   expect_identical(names(secondHar$har), "log")
+  prxy %>% closeProxy
 })
 
 test_that("canCreateNewNamedHAR", {
@@ -18,6 +19,7 @@ test_that("canCreateNewNamedHAR", {
   expect_identical(secondHar$status, 200L)
   expect_identical(secondHar$har[["log"]][["pages"]][[1]][['id']], 
                    "apples")
+  prxy %>% closeProxy
 })
 
 test_that("canCreateNewPage", {
@@ -27,6 +29,7 @@ test_that("canCreateNewPage", {
   har <- prxy %>% getHAR()
   expect_equal(length(har[["log"]][["pages"]]), 2L)
   expect_identical(har[["log"]][["pages"]][[2]][["id"]], "Page 1")
+  prxy %>% closeProxy
 })
 
 test_that("canCreateNewNamedPage", {
@@ -36,4 +39,5 @@ test_that("canCreateNewNamedPage", {
   har <- prxy %>% getHAR()
   expect_equal(length(har[["log"]][["pages"]]), 2L)
   expect_identical(har[["log"]][["pages"]][[2]][["id"]], "crazyPage")
+  prxy %>% closeProxy
 })
