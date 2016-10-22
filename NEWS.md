@@ -1,6 +1,7 @@
 # 1.0.4
 * Add bwlist functions, tests and documentation
 * Add clearWhiteList to API
+* Add TRAVIS testing
 
 # 1.0.3
 * Add HAR functions, tests and documentation
