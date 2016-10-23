@@ -2,7 +2,7 @@
 % Please edit documentation in R/bwlist.R, R/bwlistDoc.R
 \name{getBlackList}
 \alias{getBlackList}
-\title{getBlackList}
+\title{Get BlackList}
 \usage{
 getBlackList(proxy, ...)
 }
@@ -13,10 +13,10 @@ getBlackList(proxy, ...)
 \item{...}{Additonal function arguments}
 }
 \value{
-Returns a list. Each item of the list is a regex from the
+Returns a data.frame of black listed urls
 }
 \description{
-getBlackList
+Gets the URL's in the Black List. Returns a data.frame
 }
 \examples{
 \dontrun{

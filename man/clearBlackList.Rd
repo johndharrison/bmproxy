@@ -2,7 +2,7 @@
 % Please edit documentation in R/bwlist.R, R/bwlistDoc.R
 \name{clearBlackList}
 \alias{clearBlackList}
-\title{clearBlackList}
+\title{Clear Black List}
 \usage{
 clearBlackList(proxy, ...)
 }
@@ -12,8 +12,14 @@ clearBlackList(proxy, ...)
 
 \item{...}{Additonal function arguments}
 }
+\value{
+invisible(proxy): An object of class "proxy" is invisibly
+   returned. A proxy object see \code{\link{proxy}}. This
+   allows for chaining from this function to other functions that take
+   such an object as an argument. See examples for further details.
+}
 \description{
-clearBlackList
+Clears the black list of URL's
 }
 \examples{
 \dontrun{
