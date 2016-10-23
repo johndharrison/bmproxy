@@ -17,7 +17,7 @@ createHAR <- function(proxy, ref = NULL,  title = ref,
   body$initialPageTitle <- title
   body$captureHeaders <- captureHeaders
   body$captureContent <- captureContent
-  body$captureBinaryContent = captureBinaryContent
+  body$captureBinaryContent <- captureBinaryContent
   res <- VERB(verb = bmpAPI[['createHAR']][['method']],
               url = appURL,
               body = body,
