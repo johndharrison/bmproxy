@@ -96,7 +96,7 @@ removeRewrites <- function(proxy, ...){
   appURL <- file.path(proxy$url, path)
   res <- VERB(verb = bmpAPI[['removeRewrites']][['method']],
               url = appURL)
-  stop_for_status(res, paste("rewrite URL returned response: ", 
+  stop_for_status(res, paste("remove URL redirects returned response: ", 
                              res$status)
   )
   invisible(proxy)
