@@ -1,6 +1,6 @@
 Package: bmproxy
 Title: Wrapper around the 'BrowserMob Proxy' REST API for R
-Version: 1.0.4
+Version: 1.0.5
 Author: johndharrison
 Maintainer: johndharrison <johndharrison0@gmail.com>
 Description: 'BrowserMob Proxy' is a utility to help web developers watch 
