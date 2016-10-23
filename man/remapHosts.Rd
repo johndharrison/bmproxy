@@ -10,6 +10,11 @@ remapHosts(proxy, address = NULL, ipAddress = NULL, hostMap = list(), ...)
 \item{proxy}{An object of class "proxy". A proxy object see
 \code{\link{proxy}}.}
 
+\item{address}{url that you wish to remap}
+
+\item{ipAddress}{IP Address that will handle all traffic for the 
+address passed in}
+
 \item{hostMap}{An optional named list of address/ipAddress items.}
 
 \item{...}{Additonal function arguments}
@@ -26,7 +31,8 @@ Remap the hosts for a specific URL. Option to add a list of address
 }
 \examples{
 \dontrun{
-  
+  # A BMP server is assummed running on port 9090
+  prxy <- proxy(bmpPort = 9090L, port = 39500L)
 }
 }
 \seealso{

@@ -26,7 +26,7 @@
 #' @template ellipsis
 #' @family bandwidth functions
 #' @export
-#' @retProxy
+#' @template retProxy
 #'
 #' @example /inst/examples/docs/bandwidth.R
 #' @name limitBandwidth
