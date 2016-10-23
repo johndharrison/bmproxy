@@ -22,7 +22,6 @@ Depends:
 Imports:
     httr,
     magrittr,
-    jsonlite,
     whisker,
     assertthat
 Suggests:
