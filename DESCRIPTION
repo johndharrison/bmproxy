@@ -27,4 +27,5 @@ Imports:
     assertthat
 Suggests:
     testthat,
-    covr
+    covr,
+    testthat
