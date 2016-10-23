@@ -11,3 +11,7 @@ is_string <- function(x) {
 assert_string_or_null <- function(x) {
   stopifnot(is_string(x) || is.null(x))
 }
+
+assert_integer_or_null <- function(x) {
+  stopifnot(is.integer(x) || is.null(x))
+}
