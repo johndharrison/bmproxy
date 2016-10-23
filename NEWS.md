@@ -1,3 +1,7 @@
+# 1.0.7
+* Add intercept functions, tests and documentation
+* Fixed error in definition of removeRewrites REST endpoint
+
 # 1.0.6
 * Add overwrite functions, tests and documentation
 
