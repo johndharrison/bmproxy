@@ -31,7 +31,7 @@ limitBandwidth <- function(proxy, downK = NULL, upK = NULL,
               body = body,
               encode = "form"
   )
-  stop_for_status(res, paste("add URL black list returned response: ", 
+  stop_for_status(res, paste("limit bandwidth returned response: ", 
                              res$status)
   )
   invisible(proxy)
@@ -47,7 +47,7 @@ getBWremaining <- function(proxy, ...){
   appURL <- file.path(proxy$url, path)
   res <- VERB(verb = bmpAPI[['getBWremaining']][['method']],
               url = appURL)
-  stop_for_status(res, paste("add URL black list returned response: ", 
+  stop_for_status(res, paste("get bandwidth remaining returned response: ", 
                              res$status)
   )
   data.frame(content(res), stringsAsFactors = FALSE)
