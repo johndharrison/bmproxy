@@ -24,8 +24,9 @@ NULL
 #'    remaps via hostMap argument.
 #'
 #' @template proxy
-#' @param address
-#' @param ipAddress
+#' @param address url that you wish to remap
+#' @param ipAddress IP Address that will handle all traffic for the 
+#'    address passed in
 #' @param hostMap An optional named list of address/ipAddress items.
 #' @template ellipsis
 #' @family overwrite functions
