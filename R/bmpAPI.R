@@ -46,7 +46,7 @@ bmpAPI <- list(
                       group = "overwrite"),
   rewriteURL = list(method = "PUT", path = "proxy/{{port}}/rewrite",
                     group = "overwrite"),
-  removeRewrites = list(method = "DELETE", "proxy/{{port}}/rewrite",
+  removeRewrites = list(method = "DELETE", path = "proxy/{{port}}/rewrite",
                         group = "overwrite"),
   reqInterceptor = list(method = "POST", 
                         path = "proxy/{{port}}/filter/request",
