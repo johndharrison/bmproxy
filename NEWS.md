@@ -1,3 +1,5 @@
+# 1.0.5
+* Add bandwidth functions, tests and documentation
 # 1.0.4
 * Add bwlist functions, tests and documentation
 * Add clearWhiteList to API
