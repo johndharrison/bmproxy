@@ -20,7 +20,7 @@ NULL
 #'
 #' @template proxy
 #' @param regex a character vector of regular expressions
-#' @param statusCode the HTTP status code to return for URLs nthat do not 
+#' @param statusCode the HTTP status code to return for URLs that do not 
 #'    match the whitelist
 #' @template ellipsis
 #' @family bwlist functions
