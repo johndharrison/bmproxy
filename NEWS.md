@@ -1,3 +1,6 @@
+# 1.0.9
+* Add examples for packages functions
+
 # 1.0.8
 * Add utility function httr_proxy to set proxy for httr
 * Add certificates from Browser Mob Proxy for SSL
