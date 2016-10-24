@@ -5,15 +5,15 @@
 #'
 #' @template proxy
 #' @param downK Sets the downstream bandwidth limit in kbps. Optional if 
-#'    NULL (default) unlimited.
+#'    NULL (default) unlimited. From the perspective of the server.
 #' @param upK Sets the upstream bandwidth limit kbps. Optional if 
-#'    NULL (default) unlimited.
+#'    NULL (default) unlimited. From the perspective of the server.
 #' @param downMaxK Specifies how many kilobytes in total the client is 
 #'    allowed to download through the proxy. Optional if NULL (default) 
-#'    unlimited.
+#'    unlimited. From the perspective of the server.
 #' @param upMaxK Specifies how many kilobytes in total the client is 
 #'    allowed to upload through the proxy. Optional if NULL (default) 
-#'    unlimited.
+#'    unlimited. From the perspective of the server.
 #' @param latency Add the given latency to each HTTP request. Optional, by 
 #'    default all requests are invoked without latency.
 #' @template ellipsis

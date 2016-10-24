@@ -13,11 +13,11 @@ limitBandwidth <- function(proxy, downK = NULL, upK = NULL,
   path <- whisker.render(bmpAPI[['limitBandwidth']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
   body <- list()
-  body$downstreamKbps <- downK
-  body$upstreamKbps <- upK
-  body$downstreamMaxKB <- downMaxK
-  body$upstreamMaxKB <- upMaxK
-  body$latency <- latency
+  body[["downstreamKbps"]] <- downK
+  body[["upstreamKbps"]] <- upK
+  body[["downstreamMaxKB"]] <- downMaxK
+  body[["upstreamMaxKB"]] <- upMaxK
+  body[["latency"]] <- latency
 
   res <- VERB(verb = bmpAPI[['limitBandwidth']][['method']],
               url = appURL,
