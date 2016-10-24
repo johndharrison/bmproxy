@@ -1,3 +1,7 @@
+# 1.0.8
+* Add utility function httr_proxy to set proxy for httr
+* Add certificates from Browser Mob Proxy for SSL
+
 # 1.0.7
 * Add intercept functions, tests and documentation
 * Fixed error in definition of removeRewrites REST endpoint
