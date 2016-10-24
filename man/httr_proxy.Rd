@@ -28,6 +28,10 @@ Sets the proxy configuration for use with \code{\link{httr}}
   # create a HAR
   prxy \%>\% createHAR(ref = "httr_traffic")
   rproj <- GET("https://www.r-project.org/", httr_proxy(prxy))
+  httr_har <- prxy \%>\% getHAR()
+  httr_har[["log"]][["entries"]][[1]]["request"]
+  httr_har[["log"]][["entries"]][[1]]["response"]
+  prxy \%>\% closeProxy
 }
 }
 
