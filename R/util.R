@@ -33,5 +33,5 @@ httr_proxy <- function(proxy, cert_file = NULL){
                      "ca-certificate-rsa.cer"),
            cert_file
     )
-  config(cainfo = cert_file, proxy = prxy$baseip, proxyport = prxy$port)
+  config(cainfo = cert_file, proxy = proxy$baseip, proxyport = proxy$port)
 }

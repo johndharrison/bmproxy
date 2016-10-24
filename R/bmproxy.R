@@ -6,7 +6,7 @@
 #' manipulate network traffic from their AJAX applications.
 #'
 #' @importFrom magrittr %>%
-#' @importFrom httr VERB content stop_for_status content_type_json
+#' @importFrom httr VERB content stop_for_status content_type_json config
 #' @importFrom whisker whisker.render
 #' @importFrom assertthat assert_that
 #'
