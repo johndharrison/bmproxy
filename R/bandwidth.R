@@ -1,18 +1,14 @@
 
 #' @rdname limitBandwidth
 limitBandwidth <- function(proxy, downK = NULL, upK = NULL, 
-                           downMaxK = NULL, upMaxK = NULL, latency = NULL, 
-                           enable = FALSE, payPercent = NULL, 
-                           maxBits = NULL, ...){
+                           downMaxK = NULL, upMaxK = NULL, latency = NULL,
+                           ...){
   assert_proxy(proxy)
   assert_integer_or_null(downK)
   assert_integer_or_null(upK)
   assert_integer_or_null(downMaxK)
   assert_integer_or_null(upMaxK)
   assert_integer_or_null(latency)
-  assert_that(is.logical(enable))
-  assert_integer_or_null(payPercent)
-  assert_integer_or_null(maxBits)
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['limitBandwidth']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
@@ -22,10 +18,7 @@ limitBandwidth <- function(proxy, downK = NULL, upK = NULL,
   body$downstreamMaxKB <- downMaxK
   body$upstreamMaxKB <- upMaxK
   body$latency <- latency
-  body$enable <- enable
-  body$payloadPercentage <- payPercent
-  body$maxBitsPerSecond <- maxBits
-  
+
   res <- VERB(verb = bmpAPI[['limitBandwidth']][['method']],
               url = appURL,
               body = body,

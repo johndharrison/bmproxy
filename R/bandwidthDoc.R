@@ -16,13 +16,6 @@
 #'    unlimited.
 #' @param latency Add the given latency to each HTTP request. Optional, by 
 #'    default all requests are invoked without latency.
-#' @param enable A boolean that enable bandwidth limiter. Optional, by 
-#'    default to FALSE, but setting any of the bandwidth arguments will 
-#'    implicitly enable throttling
-#' @param payPercent Specifying what percentage of data sent is payload, 
-#'    e.g. use this to take into account overhead due to tcp/ip. Optional.
-#' @param maxBits The max bits per seconds you want this instance of 
-#'    StreamManager to respect. Optional.
 #' @template ellipsis
 #' @family bandwidth functions
 #' @export
