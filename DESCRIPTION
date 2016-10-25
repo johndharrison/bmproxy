@@ -1,8 +1,8 @@
 Package: bmproxy
 Title: Wrapper around the 'BrowserMob Proxy' REST API for R
 Version: 1.0.9
-Author: johndharrison
-Maintainer: johndharrison <johndharrison0@gmail.com>
+Authors@R: c( person("John", "Harrison", , "johndharrison0@gmail.com",
+    role = c("aut", "cre")))
 Description: 'BrowserMob Proxy' is a utility to help web developers watch 
     and manipulate network traffic from their AJAX applications. It 
     captures performance data in the HAR format. In addition it can 
