@@ -78,7 +78,8 @@ sel_proxy <- function(proxy, eCaps = NULL,
                                          proxy$baseip, bmpIPaddress), 
                                   proxy$port, sep = ":"),
                             sep = "="
-                      )
+                      ), 
+                      "--disable-web-security"
                     )
                   )
            )

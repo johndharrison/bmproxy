@@ -86,7 +86,7 @@ envoked `-p 9090:9090` mapping the BMP container port 9090 to the host
 port 9090. 
 
 On the Selenium container however the BMP server is reached at 
-`bmp:9090`. We could conmtinue to call the BMP server at localhost and
+`bmp:9090`. We could continue to call the BMP server at localhost and
 use `bmp:9090` for the Selenium container:
 
 ```
@@ -94,7 +94,7 @@ selP <- sel_proxy(prxy, browser = "chrome", bmpIPaddress = "bmp")
 
 ```
 
-Alternative we can get the ipaddress of the BMP server:
+Alternatively we can get the ipaddress of the BMP server:
 
 ```
 $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' bmp
@@ -111,7 +111,7 @@ prxy <- proxy(ipAddress = "172.17.0.1", bmpPort = 9090L, port = 39500L)
 selP <- sel_proxy(prxy, browser = "chrome", bmpIPaddress = "bmp")
 remDr <- remoteDr(browserName = "chrome", port = 4445L, 
                   extraCapabilities = selP)
-prxy %>% createHAR("first_page")
+prxy %>% createHAR("first_page", captureHeaders = TRUE)
 remDr %>% 
   go("http://www.google.com/ncr") %>% 
   findElement("name", "q") %>% 
