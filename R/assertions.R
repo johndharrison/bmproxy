@@ -15,3 +15,7 @@ assert_string_or_null <- function(x) {
 assert_integer_or_null <- function(x) {
   stopifnot(is.integer(x) || is.null(x))
 }
+
+assert_list_or_null <- function(x) {
+  stopifnot(is.integer(x) || is.null(x))
+}

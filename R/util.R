@@ -35,3 +35,62 @@ httr_proxy <- function(proxy, cert_file = NULL){
     )
   config(cainfo = cert_file, proxy = proxy$baseip, proxyport = proxy$port)
 }
+
+
+#' Set Selenium proxy configuration
+#'
+#' Sets the proxy configuration for use with Selenium
+#'
+#' @template proxy 
+#' @param eCaps A list of existing extra capabilities. 
+#' @param browser The browser type to set the config for. Can use firefox 
+#'    or chrome. The default is firefox. If left NULL firefox default is 
+#'    used.
+#'
+#' @return Returns an extra capabilities list that can be passed to 
+#'    Selenium
+#' @return bmpIPaddress Stipulate an alternative BMP ip address. The
+#'    Selenium server may for example be running in a docker container
+#'    as may the BMP server. Defaults to NULL and the ip address implied
+#'    by proxy is used
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#'   prxy <- proxy(bmpPort = 9090L, port = 39500L)
+#'   eCap <- sel_proxy(prxy, browser = "chrome")
+#' }
+
+sel_proxy <- function(proxy, eCaps = NULL, 
+                      browser = c("firefox", "chrome"), 
+                      bmpIPaddress = NULL){
+  assert_proxy(proxy)
+  assert_list_or_null(eCaps)
+  assert_string_or_null(bmpIPaddress)
+  browser <- match.arg(browser)
+  newCaps <- if(identical(browser, "chrome")){
+    list(chromeOptions = 
+           list(args =
+                  c(eCaps[["chromeOptions"]][["args"]], 
+                    list(
+                      paste("--proxy-server",  
+                            paste(ifelse(is.null(bmpIPaddress), 
+                                         proxy$baseip, bmpIPaddress), 
+                                  proxy$port, sep = ":"),
+                            sep = "="
+                      )
+                    )
+                  )
+           )
+    )
+  }else{
+    list(proxy = 
+           list(proxyType = 'manual', 
+                httpProxy = paste(ifelse(is.null(bmpIPaddress), 
+                                         proxy$baseip, bmpIPaddress), 
+                                  proxy$port, sep = ":")
+           )
+    )
+  }
+  c(eCaps, newCaps)
+}
