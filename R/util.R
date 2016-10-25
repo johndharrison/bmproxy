@@ -46,13 +46,13 @@ httr_proxy <- function(proxy, cert_file = NULL){
 #' @param browser The browser type to set the config for. Can use firefox 
 #'    or chrome. The default is firefox. If left NULL firefox default is 
 #'    used.
-#'
-#' @return Returns an extra capabilities list that can be passed to 
-#'    Selenium
-#' @return bmpIPaddress Stipulate an alternative BMP ip address. The
+#' @param bmpIPaddress Stipulate an alternative BMP ip address. The
 #'    Selenium server may for example be running in a docker container
 #'    as may the BMP server. Defaults to NULL and the ip address implied
 #'    by proxy is used
+#'
+#' @return Returns an extra capabilities list that can be passed to 
+#'    Selenium
 #' @export
 #'
 #' @examples

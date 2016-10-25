@@ -16,15 +16,15 @@ sel_proxy(proxy, eCaps = NULL, browser = c("firefox", "chrome"),
 \item{browser}{The browser type to set the config for. Can use firefox 
 or chrome. The default is firefox. If left NULL firefox default is 
 used.}
+
+\item{bmpIPaddress}{Stipulate an alternative BMP ip address. The
+Selenium server may for example be running in a docker container
+as may the BMP server. Defaults to NULL and the ip address implied
+by proxy is used}
 }
 \value{
 Returns an extra capabilities list that can be passed to 
    Selenium
-
-bmpIPaddress Stipulate an alternative BMP ip address. The
-   Selenium server may for example be running in a docker container
-   as may the BMP server. Defaults to NULL and the ip address implied
-   by proxy is used
 }
 \description{
 Sets the proxy configuration for use with Selenium
