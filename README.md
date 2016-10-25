@@ -108,7 +108,7 @@ library(bmproxy)
 library(seleniumPipes)
 
 prxy <- proxy(ipAddress = "172.17.0.1", bmpPort = 9090L, port = 39500L)
-selP <- sel_proxy(prxy, browser = "chrome", bmpIPaddress = "bmp")
+selP <- sel_proxy(prxy, browser = "chrome")
 remDr <- remoteDr(browserName = "chrome", port = 4445L, 
                   extraCapabilities = selP)
 prxy %>% createHAR("first_page", captureHeaders = TRUE)
