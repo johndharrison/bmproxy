@@ -1,6 +1,6 @@
 ### Tests for bmproxy
 
-The tests are run assumming a browser mob proxy server is running on port 
+The tests are run assumming a BrowserMob proxy server is running on port 
 9090 and accepts proxies on: Proxy Port Range: 39500-39999. 
 
 To facilitate TRAVIS testing we run a BMP server via a Docker container:

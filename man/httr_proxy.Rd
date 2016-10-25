@@ -11,7 +11,7 @@ httr_proxy(proxy, cert_file = NULL)
 \code{\link{proxy}}.}
 
 \item{cert_file}{An SSL certification file. If NULL bmproxy will use
-the  certificate file bundled with Browser Mob Proxy. For details
+the  certificate file bundled with BrowserMob Proxy. For details
 see https://github.com/lightbody/browsermob-proxy/blob/master/mitm/README.md}
 }
 \value{

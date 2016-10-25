@@ -13,7 +13,7 @@ openPort(proxy, ...)
 \item{...}{Additonal function arguments}
 }
 \description{
-opens a new port on the Browser Mob Proxy server
+opens a new port on the BrowserMob Proxy server
 This function is usually called via \code{\link{proxy}}
 }
 \examples{

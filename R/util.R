@@ -4,7 +4,7 @@
 #'
 #' @template proxy
 #' @param cert_file An SSL certification file. If NULL bmproxy will use
-#'    the  certificate file bundled with Browser Mob Proxy. For details
+#'    the  certificate file bundled with BrowserMob Proxy. For details
 #'    see https://github.com/lightbody/browsermob-proxy/blob/master/mitm/README.md
 #'
 #' @return Returns a \code{\link{httr}} config object see 

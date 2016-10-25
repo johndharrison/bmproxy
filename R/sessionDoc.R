@@ -1,6 +1,6 @@
 #' Open a new port/proxy
 #'
-#' opens a new port on the Browser Mob Proxy server
+#' opens a new port on the BrowserMob Proxy server
 #' This function is usually called via \code{\link{proxy}}
 #'
 #' @template proxy
@@ -15,7 +15,7 @@ NULL
 
 #' Get ports/proxies
 #'
-#' returns the ports that are currently open on the Browser Mob Proxy 
+#' returns the ports that are currently open on the BrowserMob Proxy 
 #'    server.
 #'
 #' @template proxy

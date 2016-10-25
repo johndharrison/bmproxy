@@ -17,7 +17,7 @@ Returns a list of ports. Each port is a \code{\link{proxy}}
    object
 }
 \description{
-returns the ports that are currently open on the Browser Mob Proxy 
+returns the ports that are currently open on the BrowserMob Proxy 
    server.
 }
 \examples{
