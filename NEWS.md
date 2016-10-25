@@ -1,3 +1,6 @@
+# 1.1.0
+* Add sel_proxy a utility function to pass a proxy to Selenium
+
 # 1.0.9
 * Add examples for packages functions
 * Add package site via docs
