@@ -1,5 +1,6 @@
 # 1.0.9
 * Add examples for packages functions
+* Add package site via docs
 
 # 1.0.8
 * Add utility function httr_proxy to set proxy for httr

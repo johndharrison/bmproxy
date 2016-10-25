@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>Home. bmproxy 1.0.9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="johndharrison">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">bmproxy 1.0.9</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<style>#forkongithub a{background:#500;color:#ccc;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#711;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:fixed;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
+<span id="forkongithub"><a href="https://github.com/johndharrison/bmproxy">Find me on GitHub!</a></span>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <div class="row">
+  <div class="span8">
+    <h1>bmproxy</h1>
+
+<table><thead>
+<tr>
+<th align="center">CRAN version</th>
+<th align="center">Travis build status</th>
+<th align="center">Coverage</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center"><a href="https://CRAN.R-project.org/package=bmproxy"><img src="http://www.r-pkg.org/badges/version/bmproxy" alt=""/></a></td>
+<td align="center"><a href="https://travis-ci.org/johndharrison/bmproxy"><img src="https://travis-ci.org/johndharrison/bmproxy.svg?branch=master" alt="Build Status"/></a></td>
+<td align="center"><a href="https://codecov.io/gh/johndharrison/bmproxy"><img src="https://codecov.io/gh/johndharrison/bmproxy/branch/master/graph/badge.svg" alt="codecov"/></a></td>
+</tr>
+</tbody></table>
+
+<h5><em>R client for the BrowserMob Proxy REST API</em></h5>
+
+<h3>Introduction</h3>
+
+<p>BrowserMob Proxy allows you to manipulate HTTP requests and responses, capture HTTP content, and export performance data as a HAR file. </p>
+
+<h3>Install</h3>
+
+<p>To install the current developement version of <code>bmproxy</code> run:</p>
+
+<pre><code>devtools::install_github(&quot;johndharrison/seleniumPipes&quot;)
+</code></pre>
+
+<h3>Getting started</h3>
+
+<h4>Run a BrowserMob Proxy server</h4>
+
+<p>One easy way to run a BMP server is to use a Docker image and run a 
+container. </p>
+
+<pre><code>docker run -d -p 9090:9090 -p 39500-39999:39500-39999 --name bmp qautomatron/docker-browsermob-proxy
+
+</code></pre>
+
+<p>This maps port 9090 on the container to port 9090 on the host. The BMP
+server listend on port 9090 and proxies can be created on ports 
+39500-39999. See <a href="https://hub.docker.com/r/qautomatron/docker-browsermob-proxy/">https://hub.docker.com/r/qautomatron/docker-browsermob-proxy/</a> for more details.</p>
+
+<h4>Creating a proxy</h4>
+
+<p>Once a BMP server is running creating a proxy is as simple as:</p>
+
+<pre><code>prxy &lt;- proxy(bmpPort = 9090L, port = 39500L)
+
+</code></pre>
+
+<p>See examples for more details.</p>
+
+  </div>
+
+  <div class="span3 offset1 sidebar">
+        <h2>Authors</h2>
+    <ul>
+    </ul>
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

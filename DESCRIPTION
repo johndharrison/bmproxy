@@ -14,6 +14,7 @@ Description: 'BrowserMob Proxy' is a utility to help web developers watch
 License: GPL-3
 LazyData: true
 URL: https://github.com/johndharrison/bmproxy
+URLNote: https://github.com/johndharrison/bmproxy
 BugReports: https://github.com/johndharrison/bmproxy/issues
 RoxygenNote: 5.0.1
 License: GPL-3

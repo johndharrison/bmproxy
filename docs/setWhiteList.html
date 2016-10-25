@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>setWhiteList. bmproxy 1.0.9</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="index.html">bmproxy 1.0.9</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="reference.html">Reference</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Set white list</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><span class="functioncall"><a href='setWhiteList.html'>setWhiteList</a></span><span class="keyword">(</span><span class="symbol">proxy</span><span class="keyword">,</span> <span class="symbol">regex</span><span class="keyword">,</span> <span class="symbol">statusCode</span><span class="keyword">,</span> <span class="symbol">...</span><span class="keyword">)</span></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>proxy</dt>
+      <dd>An object of class &quot;proxy&quot;. A proxy object see
+<code><a href='proxy.html'>proxy</a></code>.</dd>
+      <dt>regex</dt>
+      <dd>a character vector of regular expressions</dd>
+      <dt>statusCode</dt>
+      <dd>the HTTP status code to return for URLs that do not 
+match the whitelist</dd>
+      <dt>...</dt>
+      <dd>Additonal function arguments</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p><dl>
+invisible(proxy): An object of class &quot;proxy&quot; is invisibly
+   returned. A proxy object see <code><a href='proxy.html'>proxy</a></code>. This
+   allows for chaining from this function to other functions that take
+   such an object as an argument. See examples for further details.
+</dl></p>
+
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+
+      <p>Sets a list of URL patterns to whitelist</p>
+
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class="comment">## Not run: ------------------------------------</span>
+<span class="comment">#   # A BMP server is assummed running on port 9090</span>
+<span class="comment">#   prxy &lt;- proxy(bmpPort = 9090L, port = 39500L)</span>
+<span class="comment">#   library(httr)</span>
+<span class="comment">#   # use httr_proxy to configure proxy for httr</span>
+<span class="comment">#   white_list &lt;- prxy %&gt;% getWhiteList</span>
+<span class="comment">#   white_list</span>
+<span class="comment">#   # set an entry in the white list</span>
+<span class="comment">#   prxy %&gt;% setWhiteList(".*r-project\\.org.*", statusCode = 333L)</span>
+<span class="comment">#   white_list &lt;- prxy %&gt;% getWhiteList</span>
+<span class="comment">#   white_list</span>
+<span class="comment">#   # expect passing sites</span>
+<span class="comment">#   rcran &lt;- GET("https://cran.r-project.org/", httr_proxy(prxy))</span>
+<span class="comment">#   rproj &lt;- GET("https://www.r-project.org/", httr_proxy(prxy))</span>
+<span class="comment">#   # expect 333 status code for non matching url</span>
+<span class="comment">#   goog &lt;- GET("https://www.google.com/", httr_proxy(prxy))</span>
+<span class="comment">#   goog$status_code</span>
+<span class="comment">#   </span>
+<span class="comment">#   # clear the white list</span>
+<span class="comment">#   white_list &lt;- prxy %&gt;% </span>
+<span class="comment">#     clearWhiteList %&gt;% </span>
+<span class="comment">#     getWhiteList</span>
+<span class="comment">#   length(white_list)</span>
+<span class="comment">#   </span>
+<span class="comment">#   # get the black list</span>
+<span class="comment">#   black_list &lt;- prxy %&gt;% getBlackList</span>
+<span class="comment">#   black_list</span>
+<span class="comment">#   </span>
+<span class="comment">#   # add site to black list</span>
+<span class="comment">#   prxy %&gt;% addURLBlackList(".*r-project\\.org.*", statusCode = 334L)</span>
+<span class="comment">#   goog &lt;- GET("https://www.google.com/", httr_proxy(prxy))</span>
+<span class="comment">#   </span>
+<span class="comment">#   # expect sites to return 334 status code</span>
+<span class="comment">#   rcran &lt;- GET("https://cran.r-project.org/", httr_proxy(prxy))</span>
+<span class="comment">#   rproj &lt;- GET("https://www.r-project.org/", httr_proxy(prxy))</span>
+<span class="comment">#   rcran$status_code</span>
+<span class="comment">#   rproj$status_code</span>
+<span class="comment">#   </span>
+<span class="comment">#   # clear black list</span>
+<span class="comment">#   black_list &lt;- prxy %&gt;% </span>
+<span class="comment">#     clearBlackList %&gt;% </span>
+<span class="comment">#     getBlackList</span>
+<span class="comment">#   length(black_list)</span>
+<span class="comment"># </span>
+<span class="comment">#   prxy %&gt;% closeProxy</span>
+<span class="comment">## ---------------------------------------------</span></div></pre>
+  </div>
+  <div class="span4 sidebar">
+    <!-- <ul>
+      <li>setWhiteList</li>
+    </ul>
+    <ul>
+      
+    </ul> -->
+
+    <h2>See also</h2>
+      <p>Other bwlist functions: <code><a href='addURLBlackList.html'>addURLBlackList</a></code>,
+  <code><a href='clearBlackList.html'>clearBlackList</a></code>,
+  <code><a href='clearWhiteList.html'>clearWhiteList</a></code>, <code><a href='getBlackList.html'>getBlackList</a></code>,
+  <code><a href='getWhiteList.html'>getWhiteList</a></code></p>
+
+    
+
+
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="https://getbootstrap.com/2.0.4/">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

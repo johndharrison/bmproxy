@@ -32,7 +32,7 @@ docker run -d -p 9090:9090 -p 39500-39999:39500-39999 --name bmp qautomatron/doc
 
 This maps port 9090 on the container to port 9090 on the host. The BMP
 server listend on port 9090 and proxies can be created on ports 
-39500-39999.
+39500-39999. See https://hub.docker.com/r/qautomatron/docker-browsermob-proxy/ for more details.
 
 #### Creating a proxy
 Once a BMP server is running creating a proxy is as simple as:
@@ -41,4 +41,4 @@ Once a BMP server is running creating a proxy is as simple as:
 prxy <- proxy(bmpPort = 9090L, port = 39500L)
 
 ```
-
+See examples for more details.
