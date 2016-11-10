@@ -27,7 +27,7 @@ createHAR <- function(proxy, ref = NULL,  title = ref,
                              res$status)
   )
   if(identical(res$status_code, 200L)){
-    return(list(status = 200L, har = content(res)))
+    return(list(status = 200L, har = readHAR(content(res))))
   }
   if(identical(res$status_code, 204L)){
     return(list(status = 204L, har = NULL))
@@ -71,7 +71,7 @@ getHAR <- function(proxy, ...){
   stop_for_status(res, paste("get har returned response: ", 
                              res$status)
   )
-  content(res)
+  readHAR(content(res))
 }
 
 

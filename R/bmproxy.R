@@ -9,6 +9,7 @@
 #' @importFrom httr VERB content stop_for_status content_type_json config
 #' @importFrom whisker whisker.render
 #' @importFrom assertthat assert_that
+#' @importFrom HARtools readHAR writeHAR HARviewer
 #'
 #' @docType package
 #' @name bmproxy
