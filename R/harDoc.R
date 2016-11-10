@@ -13,6 +13,8 @@
 #'    default to FALSE.
 #' @param captureBinaryContent Boolean, capture binary content or not. 
 #'    Optional, default to FALSE.
+#' @param captureCookies Boolean, capture cookies or not. 
+#'    Optional, default to FALSE.
 #' @template ellipsis
 #' @family har functions
 #' @export

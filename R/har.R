@@ -2,13 +2,15 @@
 #' @rdname createHAR
 createHAR <- function(proxy, ref = NULL,  title = ref, 
                       captureHeaders = FALSE, captureContent = FALSE,
-                      captureBinaryContent = FALSE, ...){
+                      captureBinaryContent = FALSE, 
+                      captureCookies = FALSE, ...){
   assert_proxy(proxy)
   assert_string_or_null(ref)
   assert_string_or_null(title)
   assert_that(is.logical(captureHeaders))
   assert_that(is.logical(captureContent))
   assert_that(is.logical(captureBinaryContent))
+  assert_that(is.logical(captureCookies))
   wdata <- data.frame(port = proxy$port, stringsAsFactors = FALSE)
   path <- whisker.render(bmpAPI[['createHAR']][['path']], wdata)
   appURL <- file.path(proxy$url, path)
@@ -18,6 +20,7 @@ createHAR <- function(proxy, ref = NULL,  title = ref,
   body$captureHeaders <- captureHeaders
   body$captureContent <- captureContent
   body$captureBinaryContent <- captureBinaryContent
+  body$captureCookies <- captureCookies
   res <- VERB(verb = bmpAPI[['createHAR']][['method']],
               url = appURL,
               body = body,

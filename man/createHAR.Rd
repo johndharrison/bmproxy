@@ -5,7 +5,8 @@
 \title{Create HAR}
 \usage{
 createHAR(proxy, ref = NULL, title = ref, captureHeaders = FALSE,
-  captureContent = FALSE, captureBinaryContent = FALSE, ...)
+  captureContent = FALSE, captureBinaryContent = FALSE,
+  captureCookies = FALSE, ...)
 }
 \arguments{
 \item{proxy}{An object of class "proxy". A proxy object see
@@ -23,6 +24,9 @@ default to FALSE.}
 default to FALSE.}
 
 \item{captureBinaryContent}{Boolean, capture binary content or not. 
+Optional, default to FALSE.}
+
+\item{captureCookies}{Boolean, capture cookies or not. 
 Optional, default to FALSE.}
 
 \item{...}{Additonal function arguments}
