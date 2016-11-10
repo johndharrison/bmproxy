@@ -24,7 +24,8 @@ Imports:
     httr,
     magrittr,
     whisker,
-    assertthat
+    assertthat,
+    HARtools
 Suggests:
     testthat,
     covr
