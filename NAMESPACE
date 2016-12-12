@@ -2,6 +2,7 @@
 
 S3method(print,proxy)
 export(addURLBlackList)
+export(bmproxy)
 export(clearBlackList)
 export(clearWhiteList)
 export(closeProxy)
