@@ -32,7 +32,7 @@ bmproxy <- function(port = 9090L, version = "latest",
   bmpVersion <- bmpVer(bmpPlat, version)
   args <- c()
   tFile <- tempfile(fileext = ".txt")
-  args[["portSwitch"]] <- "--address"
+  args[["portSwitch"]] <- "--port"
   args[["port"]] <- port
   args[["portRangeSwitch"]] <- "--proxyPortRange"
   args[["portRange"]] <- 
