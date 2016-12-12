@@ -25,7 +25,9 @@ Imports:
     magrittr,
     whisker,
     assertthat,
-    HARtools
+    HARtools,
+    binman,
+    subprocess
 Suggests:
     testthat,
     covr
