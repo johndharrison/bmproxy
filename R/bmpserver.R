@@ -6,6 +6,7 @@
 #'     which runs the most recent version. To see other version currently
 #'     sourced run binman::list_versions("chromedriver")
 #' @param proxyPortRange The range of ports to use for proxies as integers.
+#' @param ttl Time in seconds until an unused proxy  is deleted 
 #'
 #' @return Returns a list with named elements process, output, error
 #'     and stop. process is the output from calling \code{\link{spawn_process}}
@@ -21,11 +22,11 @@
 #' }
 
 bmproxy <- function(port = 9090L, version = "latest",
-                      proxyPortRange = 39500L:39999L){
+                    proxyPortRange = 39500L:39999L, 
+                    ttl = 600L){
   assert_that(is_integer(port))
   assert_that(is_string(version))
   assert_that(is_integer(proxyPortRange))
-  loglevel <- match.arg(loglevel)
   bmpCheck <-  bmpCheck()
   bmpPlat <-  bmpCheck[["platform"]]
   bmpVersion <- bmpVer(bmpPlat, version)
@@ -35,7 +36,10 @@ bmproxy <- function(port = 9090L, version = "latest",
   args[["port"]] <- port
   args[["portRangeSwitch"]] <- "--proxyPortRange"
   args[["portRange"]] <- 
-    paste0("[", min(proxyPortRange), ",", max(proxyPortRange), "]")
+    paste( min(proxyPortRange), max(proxyPortRange), sep = "-")
+  args[["ttlSwitch"]] <- "--ttl"
+  args[["ttl"]] <- ttl
+  
   bmpserv <- subprocess::spawn_process(
     bmpVersion[["path"]], arguments = args
   )

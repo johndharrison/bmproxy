@@ -27,7 +27,8 @@ Imports:
     assertthat,
     HARtools,
     binman,
-    subprocess
+    subprocess,
+    yaml
 Suggests:
     testthat,
     covr

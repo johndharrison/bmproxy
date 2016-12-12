@@ -6,7 +6,8 @@
 \alias{bmproxy-package}
 \title{Wrapper around the 'BrowserMob' Proxy REST API for R}
 \usage{
-bmproxy(port = 9090L, version = "latest", proxyPortRange = 39500L:39999L)
+bmproxy(port = 9090L, version = "latest", proxyPortRange = 39500L:39999L,
+  ttl = 600L)
 }
 \arguments{
 \item{port}{Port to run on}
@@ -16,6 +17,8 @@ which runs the most recent version. To see other version currently
 sourced run binman::list_versions("chromedriver")}
 
 \item{proxyPortRange}{The range of ports to use for proxies as integers.}
+
+\item{ttl}{Time in seconds until an unused proxy  is deleted}
 }
 \value{
 Returns a list with named elements process, output, error
