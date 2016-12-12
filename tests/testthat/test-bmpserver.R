@@ -15,7 +15,7 @@ test_that("canCallBmproxy", {
   expect_identical(bmPxy$process, "hello")
 })
 
-test_that("phantom_verErrorWorks", {
+test_that("bmpVerErrorWorks", {
   with_mock(
     `binman::list_versions` = mock_binman_list_versions_bmproxy,
     expect_error(
